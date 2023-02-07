@@ -263,7 +263,11 @@
 										</div>																	
 								<% else %>
 									<h3 class='text-center'>PINGUIM</h3>
-									<p class='text-center'><strong>LAST DATA:</strong> <%= @inpe_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
+									<% if @inpe_data[:date_time][0] %>
+										<p class='text-center'><strong>LAST DATA:</strong> <%= @inpe_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
+									<% else %>										
+										<p class='text-center'><strong>LAST DATA:</strong> -- </p>
+									<% end %>
 										<div class="row">
 											<div class="col-6 text-center"> 
 												<% if @inpe_data[:swvht][0] %>
