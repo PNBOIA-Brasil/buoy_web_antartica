@@ -108,159 +108,170 @@
 							<div class="card-product-infos w-100">
 								<% if system.name.downcase == 'almirantado_int' %>
 									<h3 class='text-center'>KELLER</h3>
-										<p  class='text-center'><strong>LAST DATA:</strong> <%= @almirantado_int_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
-										<div class="row">
-											<div class="col-6 text-center">
-												<% if @almirantado_int_data[:swvht][0] %>
-													<p><strong>WAVE H.:</strong> <%= @almirantado_int_data[:swvht][0]%> m</p>
-													<p><strong>WAVE PER.:</strong> <%= @almirantado_int_data[:tp][0]%> s</p>
-													<p><strong>WAVE DIR.:</strong> <%= @almirantado_int_data[:wvdir][0].round()%>°</p>
-												<% elsif @almirantado_int_data[:swvht][1] %>
-													<p><strong>WAVE H.:</strong> <%= @almirantado_int_data[:swvht][1]%> m</p>
-													<p><strong>WAVE PER.:</strong> <%= @almirantado_int_data[:tp][1]%> s</p>
-													<p><strong>WAVE DIR.:</strong> <%= @almirantado_int_data[:wvdir][1].round()%>°</p>
-												<% elsif @almirantado_int_data[:swvht][2] %>
-													<p><strong>WAVE H.:</strong> <%= @almirantado_int_data[:swvht][2]%> m</p>
-													<p><strong>WAVE PER.:</strong> <%= @almirantado_int_data[:tp][2]%> s</p>
-													<p><strong>WAVE DIR.:</strong> <%= @almirantado_int_data[:wvdir][2].round()%>°</p>
-												<% else %>
-													<p><strong>WAVE H.:</strong> -- m</p>
-													<p><strong>WAVE PER.:</strong> -- s</p>
-													<p><strong>WAVE DIR.:</strong> -- °</p>
-												<% end %>
-											</div>
-											<div class="col-6 text-center"> 								
-												<% if @almirantado_int_data[:sst][0] %>
-													<p><strong>SST:</strong> <%= @almirantado_int_data[:sst][0].round()%> °C</p>
-												<% elsif @almirantado_int_data[:sst][1] %>
-													<p><strong>SST:</strong> <%= @almirantado_int_data[:sst][1].round()%> °C</p>
-												<% elsif @almirantado_int_data[:sst][2] %>
-													<p><strong>SST:</strong> <%= @almirantado_int_data[:sst][2].round()%> °C</p>
-												<% else %>
-													<p><strong>SST:</strong> -- °C</p>
-												<% end %>
-												<% if @almirantado_int_data[:wspd][0] %>
-													<p><strong>WIND VEL.:</strong> <%= @almirantado_int_data[:wspd][0].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @almirantado_int_data[:wdir][0].round()%> °</p>
-												<% elsif @almirantado_int_data[:wspd][1] %>
-													<p><strong>WIND VEL.:</strong> <%= @almirantado_int_data[:wspd][1].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @almirantado_int_data[:wdir][1].round()%> °</p>
-												<% elsif @almirantado_int_data[:wspd][2] %>
-													<p><strong>WIND VEL.:</strong> <%= @almirantado_int_data[:wspd][2].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @almirantado_int_data[:wdir][2].round()%> °</p>
-												<% else %>
-													<p><strong>WIND VEL.:</strong> -- knots</p>
-													<p><strong>WIND DIR.:</strong> -- °</p>
-												<% end %>
-											</div>
+									<% if @almirantado_int_data[:date_time][0] %>
+										<p class='text-center'><strong>LAST DATA:</strong> <%= @almirantado_int_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
+									<% else %>
+										<p class='text-center'><strong>LAST DATA:</strong> -- </p>								
+									<% end %>
+									<div class="row">
+										<div class="col-6 text-center">
+											<% if @almirantado_int_data[:swvht][0] %>
+												<p><strong>WAVE H.:</strong> <%= @almirantado_int_data[:swvht][0]%> m</p>
+												<p><strong>WAVE PER.:</strong> <%= @almirantado_int_data[:tp][0]%> s</p>
+												<p><strong>WAVE DIR.:</strong> <%= @almirantado_int_data[:wvdir][0].round()%>°</p>
+											<% elsif @almirantado_int_data[:swvht][1] %>
+												<p><strong>WAVE H.:</strong> <%= @almirantado_int_data[:swvht][1]%> m</p>
+												<p><strong>WAVE PER.:</strong> <%= @almirantado_int_data[:tp][1]%> s</p>
+												<p><strong>WAVE DIR.:</strong> <%= @almirantado_int_data[:wvdir][1].round()%>°</p>
+											<% elsif @almirantado_int_data[:swvht][2] %>
+												<p><strong>WAVE H.:</strong> <%= @almirantado_int_data[:swvht][2]%> m</p>
+												<p><strong>WAVE PER.:</strong> <%= @almirantado_int_data[:tp][2]%> s</p>
+												<p><strong>WAVE DIR.:</strong> <%= @almirantado_int_data[:wvdir][2].round()%>°</p>
+											<% else %>
+												<p><strong>WAVE H.:</strong> -- m</p>
+												<p><strong>WAVE PER.:</strong> -- s</p>
+												<p><strong>WAVE DIR.:</strong> -- °</p>
+											<% end %>
 										</div>
-									
+										<div class="col-6 text-center"> 								
+											<% if @almirantado_int_data[:sst][0] %>
+												<p><strong>SST:</strong> <%= @almirantado_int_data[:sst][0].round()%> °C</p>
+											<% elsif @almirantado_int_data[:sst][1] %>
+												<p><strong>SST:</strong> <%= @almirantado_int_data[:sst][1].round()%> °C</p>
+											<% elsif @almirantado_int_data[:sst][2] %>
+												<p><strong>SST:</strong> <%= @almirantado_int_data[:sst][2].round()%> °C</p>
+											<% else %>
+												<p><strong>SST:</strong> -- °C</p>
+											<% end %>
+											<% if @almirantado_int_data[:wspd][0] %>
+												<p><strong>WIND VEL.:</strong> <%= @almirantado_int_data[:wspd][0].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @almirantado_int_data[:wdir][0].round()%> °</p>
+											<% elsif @almirantado_int_data[:wspd][1] %>
+												<p><strong>WIND VEL.:</strong> <%= @almirantado_int_data[:wspd][1].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @almirantado_int_data[:wdir][1].round()%> °</p>
+											<% elsif @almirantado_int_data[:wspd][2] %>
+												<p><strong>WIND VEL.:</strong> <%= @almirantado_int_data[:wspd][2].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @almirantado_int_data[:wdir][2].round()%> °</p>
+											<% else %>
+												<p><strong>WIND VEL.:</strong> -- knots</p>
+												<p><strong>WIND DIR.:</strong> -- °</p>
+											<% end %>
+										</div>
+									</div>
 								<% elsif system.name.downcase == 'almirantado_ext' %>
 									<h3 class='text-center'>CRIOSFERA</h3>
-									<p  class='text-center'><strong>LAST DATA:</strong> <%= @almirantado_ext_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
-										<div class="row">
-											<div class="col-6 text-center"> 
-												<% if @almirantado_ext_data[:pres][0] %>
-													<p><strong>PRESSURE:</strong> <%= @almirantado_ext_data[:pres][0].round(1)%> hPa</p>
-												<% elsif @almirantado_ext_data[:pres][1] %>
-													<p><strong>PRESSURE:</strong> <%= @almirantado_ext_data[:pres][1].round(1)%> hPa</p>
-												<% elsif @almirantado_ext_data[:pres][2] %>
-													<p><strong>PRESSURE:</strong> <%= @almirantado_ext_data[:pres][2].round(1)%> hPa</p>
-												<% else %>
-													<p><strong>PRESSURE:</strong> -- hPa</p>
-												<% end %>
-												<% if @almirantado_ext_data[:atmp][0] %>
-													<p><strong>AIR TEMP.:</strong> <%= @almirantado_ext_data[:atmp][0].round(1)%> °C</p>
-												<% elsif @almirantado_ext_data[:atmp][1] %>
-													<p><strong>AIR TEMP.:</strong> <%= @almirantado_ext_data[:atmp][1].round(1)%> °C</p>
-												<% elsif @almirantado_ext_data[:atmp][2] %>
-													<p><strong>AIR TEMP.:</strong> <%= @almirantado_ext_data[:atmp][2].round(1)%> °C</p>
-												<% else %>
-													<p><strong>AIR TEMP.:</strong> -- °C</p>
-												<% end %>
-												<% if @almirantado_ext_data[:sss][0] %>
-													<p><strong>SALT:</strong> <%= @almirantado_ext_data[:sss][0].round(1)%></p>
-												<% elsif @almirantado_ext_data[:sss][1] %>
-													<p><strong>SALT:</strong> <%= @almirantado_ext_data[:sss][1].round(1)%></p>
-												<% elsif @almirantado_ext_data[:sss][2] %>
-													<p><strong>SALT:</strong> <%= @almirantado_ext_data[:sss][2].round(1)%></p>
-												<% else %>
-													<p><strong>SALT:</strong> --</p>
-												<% end %>
-											</div>
-											<div class="col-6 text-center"> 
-												<% if @almirantado_ext_data[:sst][0] %>
-													<p><strong>SST:</strong> <%= @almirantado_ext_data[:sst][0].round()%> °C</p>
-												<% elsif @almirantado_ext_data[:sst][1] %>
-													<p><strong>SST:</strong> <%= @almirantado_ext_data[:sst][1].round()%> °C</p>
-												<% elsif @almirantado_ext_data[:sst][2] %>
-													<p><strong>SST:</strong> <%= @almirantado_ext_data[:sst][2].round()%> °C</p>
-												<% else %>
-													<p><strong>SST:</strong> -- °C</p>
-												<% end %>
-												<% if @almirantado_ext_data[:wspd][0] %>
-													<p><strong>WIND VEL.:</strong> <%= @almirantado_ext_data[:wspd][0].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @almirantado_ext_data[:wdir][0].round()%> °</p>
-												<% elsif @almirantado_ext_data[:wspd][1] %>
-													<p><strong>WIND VEL.:</strong> <%= @almirantado_ext_data[:wspd][1].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @almirantado_ext_data[:wdir][1].round()%> °</p>
-												<% elsif @almirantado_ext_data[:wspd][2] %>
-													<p><strong>WIND VEL.:</strong> <%= @almirantado_ext_data[:wspd][2].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @almirantado_ext_data[:wdir][2].round()%> °</p>
-												<% else %>
-													<p><strong>WIND VEL.:</strong> -- knots</p>
-													<p><strong>WIND DIR.:</strong> -- °</p>
-												<% end %>
-											</div>
+									<% if @almirantado_ext_data[:date_time][0] %>
+										<p class='text-center'><strong>LAST DATA:</strong> <%= @almirantado_ext_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
+									<% else %>
+										<p class='text-center'><strong>LAST DATA:</strong> -- </p>								
+									<% end %>
+									<div class="row">
+										<div class="col-6 text-center"> 
+											<% if @almirantado_ext_data[:pres][0] %>
+												<p><strong>PRESSURE:</strong> <%= @almirantado_ext_data[:pres][0].round(1)%> hPa</p>
+											<% elsif @almirantado_ext_data[:pres][1] %>
+												<p><strong>PRESSURE:</strong> <%= @almirantado_ext_data[:pres][1].round(1)%> hPa</p>
+											<% elsif @almirantado_ext_data[:pres][2] %>
+												<p><strong>PRESSURE:</strong> <%= @almirantado_ext_data[:pres][2].round(1)%> hPa</p>
+											<% else %>
+												<p><strong>PRESSURE:</strong> -- hPa</p>
+											<% end %>
+											<% if @almirantado_ext_data[:atmp][0] %>
+												<p><strong>AIR TEMP.:</strong> <%= @almirantado_ext_data[:atmp][0].round(1)%> °C</p>
+											<% elsif @almirantado_ext_data[:atmp][1] %>
+												<p><strong>AIR TEMP.:</strong> <%= @almirantado_ext_data[:atmp][1].round(1)%> °C</p>
+											<% elsif @almirantado_ext_data[:atmp][2] %>
+												<p><strong>AIR TEMP.:</strong> <%= @almirantado_ext_data[:atmp][2].round(1)%> °C</p>
+											<% else %>
+												<p><strong>AIR TEMP.:</strong> -- °C</p>
+											<% end %>
+											<% if @almirantado_ext_data[:sss][0] %>
+												<p><strong>SALT:</strong> <%= @almirantado_ext_data[:sss][0].round(1)%></p>
+											<% elsif @almirantado_ext_data[:sss][1] %>
+												<p><strong>SALT:</strong> <%= @almirantado_ext_data[:sss][1].round(1)%></p>
+											<% elsif @almirantado_ext_data[:sss][2] %>
+												<p><strong>SALT:</strong> <%= @almirantado_ext_data[:sss][2].round(1)%></p>
+											<% else %>
+												<p><strong>SALT:</strong> --</p>
+											<% end %>
 										</div>
+										<div class="col-6 text-center"> 
+											<% if @almirantado_ext_data[:sst][0] %>
+												<p><strong>SST:</strong> <%= @almirantado_ext_data[:sst][0].round()%> °C</p>
+											<% elsif @almirantado_ext_data[:sst][1] %>
+												<p><strong>SST:</strong> <%= @almirantado_ext_data[:sst][1].round()%> °C</p>
+											<% elsif @almirantado_ext_data[:sst][2] %>
+												<p><strong>SST:</strong> <%= @almirantado_ext_data[:sst][2].round()%> °C</p>
+											<% else %>
+												<p><strong>SST:</strong> -- °C</p>
+											<% end %>
+											<% if @almirantado_ext_data[:wspd][0] %>
+												<p><strong>WIND VEL.:</strong> <%= @almirantado_ext_data[:wspd][0].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @almirantado_ext_data[:wdir][0].round()%> °</p>
+											<% elsif @almirantado_ext_data[:wspd][1] %>
+												<p><strong>WIND VEL.:</strong> <%= @almirantado_ext_data[:wspd][1].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @almirantado_ext_data[:wdir][1].round()%> °</p>
+											<% elsif @almirantado_ext_data[:wspd][2] %>
+												<p><strong>WIND VEL.:</strong> <%= @almirantado_ext_data[:wspd][2].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @almirantado_ext_data[:wdir][2].round()%> °</p>
+											<% else %>
+												<p><strong>WIND VEL.:</strong> -- knots</p>
+												<p><strong>WIND DIR.:</strong> -- °</p>
+											<% end %>
+										</div>
+									</div>
 								<% elsif system.name.downcase == 'potter' %>
 									<h3 class='text-center'>POTTER</h3>
-									<p class='text-center'><strong>LAST DATA:</strong> <%= @potter_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
-										<div class="row">
-											<div class="col-6 text-center"> 
-												<% if @potter_data[:swvht][0] %>
-													<p><strong>WAVE H.:</strong> <%= @potter_data[:swvht][0]%> m</p>
-													<p><strong>WAVE PER.:</strong> <%= @potter_data[:tp][0]%> s</p>
-													<p><strong>WAVE DIR.:</strong> <%= @potter_data[:wvdir][0].round()%>°</p>
-												<% elsif @potter_data[:swvht][1] %>
-													<p><strong>WAVE H.:</strong> <%= @potter_data[:swvht][1]%> m</p>
-													<p><strong>WAVE PER.:</strong> <%= @potter_data[:tp][1]%> s</p>
-													<p><strong>WAVE DIR.:</strong> <%= @potter_data[:wvdir][1].round()%>°</p>
-												<% elsif @potter_data[:swvht][2] %>
-													<p><strong>WAVE H.:</strong> <%= @potter_data[:swvht][2]%> m</p>
-													<p><strong>WAVE PER.:</strong> <%= @potter_data[:tp][2]%> s</p>
-													<p><strong>WAVE DIR.:</strong> <%= @potter_data[:wvdir][2].round()%>°</p>
-												<% else %>
-													<p><strong>WAVE H.:</strong> -- m</p>
-													<p><strong>WAVE PER.:</strong> -- s</p>
-													<p><strong>WAVE DIR.:</strong> -- °</p>
-												<% end %>
-											</div>
-											<div class="col-6 text-center"> 
-												<% if @potter_data[:sst][0] %>
-													<p><strong>SST:</strong> <%= @potter_data[:sst][0].round()%> °C</p>
-												<% elsif @potter_data[:sst][1] %>
-													<p><strong>SST:</strong> <%= @potter_data[:sst][1].round()%> °C</p>
-												<% elsif @potter_data[:sst][2] %>
-													<p><strong>SST:</strong> <%= @potter_data[:sst][2].round()%> °C</p>
-												<% else %>
-													<p><strong>SST:</strong> -- °C</p>
-												<% end %>
-												<% if @potter_data[:wspd][0] %>
-													<p><strong>WIND VEL.:</strong> <%= @potter_data[:wspd][0].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @potter_data[:wdir][0].round()%> °</p>
-												<% elsif @potter_data[:wspd][1] %>
-													<p><strong>WIND VEL.:</strong> <%= @potter_data[:wspd][1].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @potter_data[:wdir][1].round()%> °</p>
-												<% elsif @potter_data[:wspd][2] %>
-													<p><strong>WIND VEL.:</strong> <%= @potter_data[:wspd][2].round()%> knots</p>
-													<p><strong>WIND DIR.:</strong> <%= @potter_data[:wdir][2].round()%> °</p>
-												<% else %>
-													<p><strong>WIND VEL.:</strong> -- knots</p>
-													<p><strong>WIND DIR.:</strong> -- °</p>
-												<% end %>
-											</div>
-										</div>																	
+									<% if @potter_data[:date_time][0] %>
+										<p class='text-center'><strong>LAST DATA:</strong> <%= @potter_data[:date_time][0].strftime('%Y/%m/%d %H:%M')%></p>
+									<% else %>
+										<p class='text-center'><strong>LAST DATA:</strong> -- </p>								
+									<% end %>
+									<div class="row">
+										<div class="col-6 text-center"> 
+											<% if @potter_data[:swvht][0] %>
+												<p><strong>WAVE H.:</strong> <%= @potter_data[:swvht][0]%> m</p>
+												<p><strong>WAVE PER.:</strong> <%= @potter_data[:tp][0]%> s</p>
+												<p><strong>WAVE DIR.:</strong> <%= @potter_data[:wvdir][0].round()%>°</p>
+											<% elsif @potter_data[:swvht][1] %>
+												<p><strong>WAVE H.:</strong> <%= @potter_data[:swvht][1]%> m</p>
+												<p><strong>WAVE PER.:</strong> <%= @potter_data[:tp][1]%> s</p>
+												<p><strong>WAVE DIR.:</strong> <%= @potter_data[:wvdir][1].round()%>°</p>
+											<% elsif @potter_data[:swvht][2] %>
+												<p><strong>WAVE H.:</strong> <%= @potter_data[:swvht][2]%> m</p>
+												<p><strong>WAVE PER.:</strong> <%= @potter_data[:tp][2]%> s</p>
+												<p><strong>WAVE DIR.:</strong> <%= @potter_data[:wvdir][2].round()%>°</p>
+											<% else %>
+												<p><strong>WAVE H.:</strong> -- m</p>
+												<p><strong>WAVE PER.:</strong> -- s</p>
+												<p><strong>WAVE DIR.:</strong> -- °</p>
+											<% end %>
+										</div>
+										<div class="col-6 text-center"> 
+											<% if @potter_data[:sst][0] %>
+												<p><strong>SST:</strong> <%= @potter_data[:sst][0].round()%> °C</p>
+											<% elsif @potter_data[:sst][1] %>
+												<p><strong>SST:</strong> <%= @potter_data[:sst][1].round()%> °C</p>
+											<% elsif @potter_data[:sst][2] %>
+												<p><strong>SST:</strong> <%= @potter_data[:sst][2].round()%> °C</p>
+											<% else %>
+												<p><strong>SST:</strong> -- °C</p>
+											<% end %>
+											<% if @potter_data[:wspd][0] %>
+												<p><strong>WIND VEL.:</strong> <%= @potter_data[:wspd][0].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @potter_data[:wdir][0].round()%> °</p>
+											<% elsif @potter_data[:wspd][1] %>
+												<p><strong>WIND VEL.:</strong> <%= @potter_data[:wspd][1].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @potter_data[:wdir][1].round()%> °</p>
+											<% elsif @potter_data[:wspd][2] %>
+												<p><strong>WIND VEL.:</strong> <%= @potter_data[:wspd][2].round()%> knots</p>
+												<p><strong>WIND DIR.:</strong> <%= @potter_data[:wdir][2].round()%> °</p>
+											<% else %>
+												<p><strong>WIND VEL.:</strong> -- knots</p>
+												<p><strong>WIND DIR.:</strong> -- °</p>
+											<% end %>
+										</div>
+									</div>																	
 								<% else %>
 									<h3 class='text-center'>PINGUIM</h3>
 									<% if @inpe_data[:date_time][0] %>
