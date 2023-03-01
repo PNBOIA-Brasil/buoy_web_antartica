@@ -57,6 +57,11 @@ class PagesController < ApplicationController
     @inpe_data = get_remobs_new(@inpe, start_date, end_date)
     @potter_data = get_remobs_new(@potter, start_date, end_date)
 
+    @almirantado_int_last = get_remobs_new(@almirantado_int, start_date, end_date)
+    @almirantado_ext_last = get_remobs_new(@almirantado_ext, start_date, end_date)
+    @inpe_last = get_remobs_new(@potter, Time.new(2023, 2, 5), Time.new(2023, 2, 10))
+    @potter_last = get_remobs_new(@inpe, Time.new(2023, 2, 1), Time.new(2023, 2, 5))
+
     start_date = (Time.now - 5.day)
     end_date = Time.now + 1.day
     @drifters = get_remobs_sofar(start_date, end_date)
@@ -101,6 +106,11 @@ class PagesController < ApplicationController
     @almirantado_ext_data = get_remobs_new(@almirantado_ext, start_date, end_date)
     @inpe_data = get_remobs_new(@inpe, start_date, end_date)
     @potter_data = get_remobs_new(@potter, start_date, end_date)
+
+    @almirantado_int_last = get_remobs_new(@almirantado_int, start_date, end_date)
+    @almirantado_ext_last = get_remobs_new(@almirantado_ext, start_date, end_date)
+    @inpe_last = get_remobs_new(@potter, Time.new(2023, 2, 5), Time.new(2023, 2, 10))
+    @potter_last = get_remobs_new(@inpe, Time.new(2023, 2, 1), Time.new(2023, 2, 5))
 
     start_date = (Time.now - 5.day)
     end_date = Time.now + 1.day
